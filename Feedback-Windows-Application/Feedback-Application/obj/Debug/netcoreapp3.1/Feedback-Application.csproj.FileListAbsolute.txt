@@ -1,0 +1,16 @@
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.exe
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.deps.json
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.runtimeconfig.json
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.runtimeconfig.dev.json
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.dll
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.pdb
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Api.dll
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Api.pdb
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.csprojAssemblyReference.cache
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.csproj.CoreCompileInputs.cache
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.AssemblyInfoInputs.cache
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.AssemblyInfo.cs
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.csproj.CopyComplete
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.dll
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.pdb
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.genruntimeconfig.cache

@@ -1,0 +1,12 @@
+C:\Users\Amina\source\repos\Feedback-Application\Api\bin\Debug\Api.dll
+C:\Users\Amina\source\repos\Feedback-Application\Api\bin\Debug\Api.pdb
+C:\Users\Amina\source\repos\Feedback-Application\Api\obj\Debug\Api.csprojAssemblyReference.cache
+C:\Users\Amina\source\repos\Feedback-Application\Api\obj\Debug\Api.csproj.CoreCompileInputs.cache
+C:\Users\Amina\source\repos\Feedback-Application\Api\obj\Debug\Api.dll
+C:\Users\Amina\source\repos\Feedback-Application\Api\obj\Debug\Api.pdb
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\bin\Debug\Api.dll
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\bin\Debug\Api.pdb
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.csprojAssemblyReference.cache
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.csproj.CoreCompileInputs.cache
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.dll
+C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.pdb
