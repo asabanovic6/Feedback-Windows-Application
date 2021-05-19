@@ -15,6 +15,7 @@ namespace Feedback_Application.Models
         public int SessionId { get; set; }
         public int CampaignId { get; set; }
         public int Duration { get; set; }
+        public bool IsSynced { get; set; }
 
         public virtual Campaign Campaign { get; set; }
         public virtual ICollection<UserResponse> UserResponses { get; set; }
