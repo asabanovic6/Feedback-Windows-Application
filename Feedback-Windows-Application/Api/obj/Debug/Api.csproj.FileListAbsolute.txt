@@ -10,3 +10,9 @@ C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.csprojAsse
 C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.csproj.CoreCompileInputs.cache
 C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.dll
 C:\Users\Amina\Desktop\Feedback-Windows-Application\Api\obj\Debug\Api.pdb
+E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\bin\Debug\Api.dll
+E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\bin\Debug\Api.pdb
+E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.csprojAssemblyReference.cache
+E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.csproj.CoreCompileInputs.cache
+E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.dll
+E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.pdb

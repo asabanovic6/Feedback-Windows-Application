@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Feedback_Application.DatabaseService;
+using Feedback_Application.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,5 @@ namespace Feedback_Application
         {
             InitializeComponent();
         }
-
     }
 }
