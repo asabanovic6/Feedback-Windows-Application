@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\etf\\3. godina\\6. semestar\\SI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {}
+    "C:\\Users\\LENOVO\\Desktop\\si projekat\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {}
   },
   "projects": {
-    "E:\\etf\\3. godina\\6. semestar\\SI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {
+    "C:\\Users\\LENOVO\\Desktop\\si projekat\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\etf\\3. godina\\6. semestar\\SI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\si projekat\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
         "projectName": "Feedback-Application",
-        "projectPath": "E:\\etf\\3. godina\\6. semestar\\SI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
-        "packagesPath": "C:\\Users\\who.so\\.nuget\\packages\\",
-        "outputPath": "E:\\etf\\3. godina\\6. semestar\\SI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\Desktop\\si projekat\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\Desktop\\si projekat\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\who.so\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
