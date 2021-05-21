@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Feedback_Application
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         public Form1()
         {
@@ -74,6 +74,9 @@ namespace Feedback_Application
 
         }
          
+        // Kontroler za submit dugme
+        // U ovom kontroleru se šalje installation code prema serveru i spasavaju se podaci
+        // iz config file-a i odg sa servera
         private void button1_Click(object sender, EventArgs e)
         {
             bool installationCode = true;
@@ -112,8 +115,12 @@ namespace Feedback_Application
                 {
                     values = "DA";
                 }
+                //ovaj json se salje prema serveru
                 String json = "{\"Installation code\":\"" + textBoxInstallationCode.Text + "\", \"IP adresa\":\"" + textBoxIPadresa.Text
                    + "\", \"Zavisna pitanja\":\"" + values + "\", \"keepAlive\":\"" + textBoxKeepAlive.Text + "\"}";
+
+                //dio koda sa spasavanje config-a u MyDocuments
+
                 FileInfo fi = new FileInfo((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) + "\\config.json");
                 if (!fi.Exists)
                 {

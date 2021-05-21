@@ -87,36 +87,34 @@ namespace Feedback_Application
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExit.BackgroundImage = global::Feedback_Application.Properties.Resources.logout;
-            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonExit.BackgroundImage = global::Feedback_Application.Properties.Resources.icons8_logout_rounded_left_30;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonExit.Location = new System.Drawing.Point(726, 405);
+            this.buttonExit.Location = new System.Drawing.Point(261, 14);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(56, 56);
+            this.buttonExit.Size = new System.Drawing.Size(54, 50);
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click_1);
             // 
             // Questions
             // 
-            this.MinimumSize = new System.Drawing.Size(805, 484);
-            this.MaximumSize = new System.Drawing.Size(805, 484);
-
-            // Set the start position of the form to the center of the screen.
-            this.StartPosition = FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::Feedback_Application.Properties.Resources.iconfinder_UI_Basic_outline_116_4733225__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(805, 484);
+            this.ClientSize = new System.Drawing.Size(805, 700);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonBack);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Coral;
+            this.MaximumSize = new System.Drawing.Size(805, 700);
+            this.MinimumSize = new System.Drawing.Size(805, 700);
             this.Name = "Questions";
             this.Text = "Questions";
             this.Load += new System.EventHandler(this.Questions_Load);
@@ -362,9 +360,9 @@ namespace Feedback_Application
                 {
                    x = createMultipleChoicePanel(panel, pitanja, startPosition, endPosition);
                     createDataLabel(panel, pitanja[page].Data1, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data2, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data3, x);
                 } else
                 {
@@ -378,9 +376,9 @@ namespace Feedback_Application
                 {
                     x = createSingleChoicePanel(panel, pitanja, startPosition, endPosition);
                     createDataLabel(panel, pitanja[page].Data1, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data2, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data3, x);
                 }
                 else
@@ -394,9 +392,9 @@ namespace Feedback_Application
                 {
                     x = createTextBoxForCustomAnswer(panel);
                     createDataLabel(panel, pitanja[page].Data1, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data2, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data3, x);
                 }
                 else
@@ -413,9 +411,9 @@ namespace Feedback_Application
                 {
                     x = createSlider(panel,qa);
                     createDataLabel(panel, pitanja[page].Data1, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data2, x);
-                    x += 10;
+                    x += 20;
                     createDataLabel(panel, pitanja[page].Data3, x);
                 }
                 else

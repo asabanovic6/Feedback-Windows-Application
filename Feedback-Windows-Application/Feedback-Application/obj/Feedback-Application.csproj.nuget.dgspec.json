@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adnan\\Documents\\GitHub\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {}
+    "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adnan\\Documents\\GitHub\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {
+    "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adnan\\Documents\\GitHub\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+        "projectUniqueName": "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
         "projectName": "Feedback-Application",
-        "projectPath": "C:\\Users\\Adnan\\Documents\\GitHub\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
-        "packagesPath": "C:\\Users\\Adnan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adnan\\Documents\\GitHub\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
+        "projectPath": "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+        "packagesPath": "C:\\Users\\Amina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Adnan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

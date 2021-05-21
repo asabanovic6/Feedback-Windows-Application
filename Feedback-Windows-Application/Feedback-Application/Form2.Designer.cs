@@ -36,9 +36,10 @@ namespace Feedback_Application
             // btnStartSession
             // 
             this.btnStartSession.BackColor = System.Drawing.Color.Azure;
-            this.btnStartSession.Location = new System.Drawing.Point(257, 86);
+            this.btnStartSession.Location = new System.Drawing.Point(239, 102);
+            this.btnStartSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStartSession.Name = "btnStartSession";
-            this.btnStartSession.Size = new System.Drawing.Size(174, 28);
+            this.btnStartSession.Size = new System.Drawing.Size(152, 21);
             this.btnStartSession.TabIndex = 0;
             this.btnStartSession.Text = "OK";
             this.btnStartSession.UseVisualStyleBackColor = false;
@@ -48,22 +49,23 @@ namespace Feedback_Application
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(23, 90);
+            this.label1.Location = new System.Drawing.Point(21, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 20);
+            this.label1.Size = new System.Drawing.Size(172, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Za početak sesije kliknite na OK";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 191);
+            this.ClientSize = new System.Drawing.Size(436, 194);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnStartSession);
-            this.Enabled = false;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
+            this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 15);
             this.Text = "Početak sesije";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

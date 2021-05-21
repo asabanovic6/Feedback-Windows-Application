@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Feedback_Application
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MetroFramework.Forms.MetroForm
     {
         public Form2()
         {
@@ -19,6 +19,8 @@ namespace Feedback_Application
 
         }
 
+        // preuzimanje podataka i kada se klikne btnSubmit otvara se Question forma - forma 3
+        // proslijediti joj pitanja
         private void btnStartSession_Click(object sender, EventArgs e)
         {
 
