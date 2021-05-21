@@ -16,3 +16,9 @@ E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Ap
 E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.csproj.CoreCompileInputs.cache
 E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.dll
 E:\etf\3. godina\6. semestar\SI\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.pdb
+C:\Users\Adnan\Documents\GitHub\Feedback-Windows-Application\Feedback-Windows-Application\Api\bin\Debug\Api.dll
+C:\Users\Adnan\Documents\GitHub\Feedback-Windows-Application\Feedback-Windows-Application\Api\bin\Debug\Api.pdb
+C:\Users\Adnan\Documents\GitHub\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.csprojAssemblyReference.cache
+C:\Users\Adnan\Documents\GitHub\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.csproj.CoreCompileInputs.cache
+C:\Users\Adnan\Documents\GitHub\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.dll
+C:\Users\Adnan\Documents\GitHub\Feedback-Windows-Application\Feedback-Windows-Application\Api\obj\Debug\Api.pdb

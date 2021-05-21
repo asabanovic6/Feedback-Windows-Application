@@ -1,8 +1,10 @@
 ﻿
 using Feedback_Application.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 namespace Feedback_Application
 {
@@ -100,6 +102,11 @@ namespace Feedback_Application
             // 
             // Questions
             // 
+            this.MinimumSize = new System.Drawing.Size(805, 484);
+            this.MaximumSize = new System.Drawing.Size(805, 484);
+
+            // Set the start position of the form to the center of the screen.
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -126,7 +133,7 @@ namespace Feedback_Application
             mainPanel.HorizontalScrollbarSize = 10;
             mainPanel.Location = new System.Drawing.Point(23, 86);
             mainPanel.Name = "mainPanel" + page.ToString();
-            mainPanel.Size = new System.Drawing.Size(500, 200);
+            mainPanel.Size = new System.Drawing.Size(700, 700);
             mainPanel.TabIndex = 2;
             mainPanel.VerticalScrollbarBarColor = true;
             mainPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -169,7 +176,30 @@ namespace Feedback_Application
             return radioButton;
         }
 
-        private void createTextBoxForCustomAnswer(MetroFramework.Controls.MetroPanel panel)
+        private void createPictureBox(int startPosition, int endPosition,MetroFramework.Controls.MetroPanel panel, string base64String)
+        {
+            System.Windows.Forms.PictureBox pictureBoxAnswer = new System.Windows.Forms.PictureBox();
+
+
+            pictureBoxAnswer.Location = new System.Drawing.Point(startPosition, endPosition);
+            pictureBoxAnswer.Name = "pictureBox";
+            pictureBoxAnswer.Size = new System.Drawing.Size(350, 200);
+            pictureBoxAnswer.TabIndex = 2;
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            // Convert byte[] to Image
+            using (var ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                pictureBoxAnswer.Image = Image.FromStream(ms, true);
+            }
+            pictureBoxAnswer.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            panel.Controls.Add(pictureBoxAnswer);
+            //panel.SuspendLayout();
+            //panel.Controls.Add(pictureBoxAnswer);
+            //this.Controls.Add(panel);
+        }
+
+        private int createTextBoxForCustomAnswer(MetroFramework.Controls.MetroPanel panel)
         {
             System.Windows.Forms.TextBox textBoxAnswer = new System.Windows.Forms.TextBox();
 
@@ -181,6 +211,7 @@ namespace Feedback_Application
             panel.SuspendLayout();
             panel.Controls.Add(textBoxAnswer);
             this.Controls.Add(panel);
+            return 60;
         }
 
         private void createQuestionLabel(MetroFramework.Controls.MetroPanel panel, List<Question> questions) 
@@ -199,34 +230,75 @@ namespace Feedback_Application
             panel.Controls.Add(questionLabel);
         }
 
-        private void createMultipleChoicePanel(MetroFramework.Controls.MetroPanel panel, List<Question> pitanja, int startPosition, int endPosition)
+        private void createDataLabel(MetroFramework.Controls.MetroPanel panel, string data, int endPosition)
+        {
+            System.Windows.Forms.Label questionLabel = new System.Windows.Forms.Label();
+
+            questionLabel.AutoSize = true;
+            questionLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.GraphicsUnit.Point);
+            questionLabel.ForeColor = System.Drawing.Color.Black;
+            questionLabel.Location = new System.Drawing.Point(15, endPosition);
+            questionLabel.Name = "metroLabel1";
+            questionLabel.Size = new System.Drawing.Size(81, 19);
+            questionLabel.TabIndex = 3;
+            questionLabel.Text = data;
+
+            panel.Controls.Add(questionLabel);
+        }
+
+        private int createMultipleChoicePanel(MetroFramework.Controls.MetroPanel panel, List<Question> pitanja, int startPosition, int endPosition)
         {
             List<QuestionAnswer> qa = new List<QuestionAnswer>();
             qa.AddRange(pitanja[page].QuestionAnswers);
 
             for (int j = 0; j < qa.Count; j++)
             {
-                MetroFramework.Controls.MetroCheckBox cb = createCheckBox(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel);
-                endPosition += 40;
+                if (qa[j].Answer.IsApicture.Equals(true))
+                {
+                    endPosition += 100;
+                    MetroFramework.Controls.MetroCheckBox cb = createCheckBox(startPosition, endPosition, j, "", panel);
+
+                    createPictureBox(startPosition + 20, endPosition, panel, qa[j].Answer.AnswerText);
+                    endPosition += 250;
+                }
+                else
+                {
+                    MetroFramework.Controls.MetroCheckBox cb = createCheckBox(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel);
+                    endPosition += 40;
+                }
+
             }
             panels.Add(panel);
+            return endPosition;
         }
 
-        private void createSingleChoicePanel(MetroFramework.Controls.MetroPanel panel, List<Question> pitanja, int startPosition, int endPosition)
+        private int createSingleChoicePanel(MetroFramework.Controls.MetroPanel panel, List<Question> pitanja, int startPosition, int endPosition)
         {
             List<QuestionAnswer> qa = new List<QuestionAnswer>();
             qa.AddRange(pitanja[page].QuestionAnswers);
 
             for (int j = 0; j < qa.Count; j++)
             {
-                MetroFramework.Controls.MetroRadioButton rb = createRadioButton(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel);
-                endPosition += 40;
+                if (qa[j].Answer.IsApicture.Equals(true))
+                {
+                    endPosition += 100;
+                    MetroFramework.Controls.MetroRadioButton rb = createRadioButton(startPosition, endPosition, j," ", panel);
+                    
+                    createPictureBox(startPosition+20, endPosition, panel,qa[j].Answer.AnswerText);
+                    endPosition += 250;
+                }
+                else
+                {
+                    MetroFramework.Controls.MetroRadioButton rb = createRadioButton(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel);
+                    endPosition += 40;
+                }
             }
 
             panels.Add(panel);
+            return endPosition;
         }
 
-        private void createSlider(MetroFramework.Controls.MetroPanel panel, List<QuestionAnswer> qa)
+        private int createSlider(MetroFramework.Controls.MetroPanel panel, List<QuestionAnswer> qa)
         {
 
             MetroFramework.Controls.MetroTrackBar trackBar = new MetroFramework.Controls.MetroTrackBar();
@@ -272,37 +344,91 @@ namespace Feedback_Application
             panel.Controls.Add(startLabel);
             panel.Controls.Add(trackBar);
             this.Controls.Add(panel);
+            return 100;
         }
+
 
         private void loadQuestions(List<Question>pitanja) 
         {
             int startPosition = 23;
             int endPosition = 50;
+            int x;
             MetroFramework.Controls.MetroPanel panel = createPanel();
             createQuestionLabel(panel, pitanja);
 
             if (pitanja[page].QuestionType.Equals("multiple choice"))
             {
-                createMultipleChoicePanel(panel, pitanja, startPosition, endPosition);
+                if (pitanja[page].IsDependent == true)
+                {
+                   x = createMultipleChoicePanel(panel, pitanja, startPosition, endPosition);
+                    createDataLabel(panel, pitanja[page].Data1, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data2, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data3, x);
+                } else
+                {
+                    createMultipleChoicePanel(panel, pitanja, startPosition, endPosition);
+                }
+              
             }
             else if (pitanja[page].QuestionType.Equals("single choice"))
             {
-                createSingleChoicePanel(panel, pitanja, startPosition, endPosition);
+                if (pitanja[page].IsDependent == true)
+                {
+                    x = createSingleChoicePanel(panel, pitanja, startPosition, endPosition);
+                    createDataLabel(panel, pitanja[page].Data1, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data2, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data3, x);
+                }
+                else
+                {
+                    createSingleChoicePanel(panel, pitanja, startPosition, endPosition);
+                }
             }
             else if (pitanja[page].QuestionType.Equals("custom choice"))
             {
-                createTextBoxForCustomAnswer(panel);
+                if (pitanja[page].IsDependent == true)
+                {
+                    x = createTextBoxForCustomAnswer(panel);
+                    createDataLabel(panel, pitanja[page].Data1, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data2, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data3, x);
+                }
+                else
+                {
+                    createTextBoxForCustomAnswer(panel);
+                }
                 panels.Add(panel);
             }
             else if (pitanja[page].QuestionType.Equals("scala choice"))
             {
                 List<QuestionAnswer> qa = new List<QuestionAnswer>();
                 qa.AddRange(pitanja[page].QuestionAnswers);
+                if (pitanja[page].IsDependent == true)
+                {
+                    x = createSlider(panel,qa);
+                    createDataLabel(panel, pitanja[page].Data1, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data2, x);
+                    x += 10;
+                    createDataLabel(panel, pitanja[page].Data3, x);
+                }
+                else
+                {
 
-                createSlider(panel, qa);
+                    createSlider(panel, qa);
+                }
                 panels.Add(panel);
             }
+            
         }
+
+        
 
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonOK;
