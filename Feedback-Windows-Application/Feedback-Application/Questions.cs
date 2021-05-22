@@ -1,9 +1,13 @@
 ﻿using Feedback_Application.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -12,6 +16,9 @@ namespace Feedback_Application
 {
     public partial class Questions : MetroFramework.Forms.MetroForm
     {
+
+        Fadevice FADevice = Form1.GetFADevice();
+
         public List<Question> questions = new List<Question>();
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -45,21 +52,44 @@ namespace Feedback_Application
         }
         public Questions()
         {
+            Console.WriteLine("pocetak............................");
+            Console.ReadLine();
             // ovdje dohvatiti listu pitanja
-            questions.AddRange( new List<Question> {
-                new Question { QuestionId = 1, QuestionType = "multiple choice", QuestionText = "Kakav je danas dan?" ,IsDependent = true, Data1 = "Ovo je nesto", Data2 = "nesto drugo", Data3 = "nesto trece", CampaignId = 1},
-                new Question { QuestionId = 2, QuestionType = "single choice", QuestionText = "Kako si?", IsDependent = false, Data1 = null, Data2 = null, Data3 = null, CampaignId = 1},
-                new Question { QuestionId = 3, QuestionType = "custom choice", QuestionText = "Sta ima?", IsDependent = false, Data1 = null, Data2 = null, Data3 = null, CampaignId = 1 },
-                new Question { QuestionId = 4, QuestionType = "multiple choice", QuestionText = "Ovo je primjer pitanja?", IsDependent = true, Data1 = null, Data2 = null, Data3 = null, CampaignId = 1 },
-                new Question { QuestionId = 5, QuestionType = "scala choice", QuestionText = "Ovo je scala choice", IsDependent = true, Data1 = null, Data2 = null, Data3 = null, CampaignId = 1 }
-            });
-            addAnswersToQuestions(questions);
+
+            String url = "https://si-main-server.herokuapp.com/api/campaign" + "/1";
+            JToken result;
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpWebRequest.Method = "GET";
+            try
+            {
+                var httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (Stream stream = httpWebResponse.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+                    String responseString = reader.ReadToEnd();
+
+                    result = JsonConvert.DeserializeObject<JToken>(responseString);
+                    var nesto = result["Questions"].ToString();
+                    List<Question> pitanja = JsonConvert.DeserializeObject<List<Question>>(nesto);
+                    //questions = pitanja;
+                    questions.Add(pitanja[1]);
+                    //Form1.WriteToFile(questions.Count.ToString());
+                }
+
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine(except);
+                Form1.WriteToFile(except.ToString());
+            }
+         
+            //addAnswersToQuestions(questions);
             InitializeComponent();
         }
 
         private void Questions_Load(object sender, EventArgs e)
         {
-            
+            Form1.WriteToFile(questions.Count.ToString());
             loadQuestions(questions);
             buttonOK.Region = Region.FromHrgn(CreateRoundRectRgn(0,0,buttonOK.Width, buttonOK.Height,10,10));
             buttonBack.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonBack.Width, buttonBack.Height, 10, 10));

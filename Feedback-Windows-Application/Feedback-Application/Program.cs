@@ -18,9 +18,11 @@ namespace Feedback_Application
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Questions());
 
+            Application.Run(new Questions());
 
-            if (!File.Exists((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) + "\\config.json"))
+            /*if (!File.Exists((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) + "\\config.json"))
             {
 
                 Application.Run(new Form1());
@@ -28,7 +30,7 @@ namespace Feedback_Application
             else
             {
                 Application.Run(new Form2());
-            }
+            }*/
         }
     }
 }

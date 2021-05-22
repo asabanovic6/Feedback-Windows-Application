@@ -23,7 +23,9 @@ namespace Feedback_Application
         // proslijediti joj pitanja
         private void btnStartSession_Click(object sender, EventArgs e)
         {
-
+            Questions sesija = new Questions();
+            sesija.ShowDialog();
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)

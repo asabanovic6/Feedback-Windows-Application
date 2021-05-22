@@ -305,8 +305,17 @@ namespace Feedback_Application
             trackBar.Name = "trackBar";
             trackBar.Size = new System.Drawing.Size(300, 23);
             trackBar.TabIndex = 2;
-            trackBar.Minimum = int.Parse(qa[0].Answer.AnswerText);
-            trackBar.Maximum = int.Parse(qa[qa.Count - 1].Answer.AnswerText);
+            if (qa.Count == 1)
+            {
+                trackBar.Minimum = 0;
+                trackBar.Maximum = 1;
+            }
+            else
+            {
+                trackBar.Minimum = int.Parse(qa[0].Answer.AnswerText);
+                trackBar.Maximum = int.Parse(qa[qa.Count - 1].Answer.AnswerText);
+
+            }
 
             //creating labels
             MetroFramework.Controls.MetroLabel middleLabel = new MetroFramework.Controls.MetroLabel();
@@ -354,7 +363,7 @@ namespace Feedback_Application
             MetroFramework.Controls.MetroPanel panel = createPanel();
             createQuestionLabel(panel, pitanja);
 
-            if (pitanja[page].QuestionType.Equals("multiple choice"))
+            if (pitanja[page].QuestionType.Equals("Multiple"))
             {
                 if (pitanja[page].IsDependent == true)
                 {
@@ -370,7 +379,7 @@ namespace Feedback_Application
                 }
               
             }
-            else if (pitanja[page].QuestionType.Equals("single choice"))
+            else if (pitanja[page].QuestionType.Equals("Single"))
             {
                 if (pitanja[page].IsDependent == true)
                 {
@@ -386,7 +395,7 @@ namespace Feedback_Application
                     createSingleChoicePanel(panel, pitanja, startPosition, endPosition);
                 }
             }
-            else if (pitanja[page].QuestionType.Equals("custom choice"))
+            else if (pitanja[page].QuestionType.Equals("Text"))
             {
                 if (pitanja[page].IsDependent == true)
                 {
@@ -403,7 +412,7 @@ namespace Feedback_Application
                 }
                 panels.Add(panel);
             }
-            else if (pitanja[page].QuestionType.Equals("scala choice"))
+            else if (pitanja[page].QuestionType.Equals("Scale"))
             {
                 List<QuestionAnswer> qa = new List<QuestionAnswer>();
                 qa.AddRange(pitanja[page].QuestionAnswers);

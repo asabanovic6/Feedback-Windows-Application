@@ -7707,24 +7707,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amina\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\cajuta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+      "projectUniqueName": "C:\\Users\\cajuta\\Source\\Repos\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
       "projectName": "Feedback-Application",
-      "projectPath": "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
-      "packagesPath": "C:\\Users\\Amina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amina\\Documents\\ProjekatSI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
+      "projectPath": "C:\\Users\\cajuta\\Source\\Repos\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+      "packagesPath": "C:\\Users\\cajuta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cajuta\\Source\\Repos\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Amina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\cajuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
