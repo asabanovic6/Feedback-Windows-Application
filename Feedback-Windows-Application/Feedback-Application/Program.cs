@@ -9,28 +9,20 @@ namespace Feedback_Application
 {
     static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Questions());
-
-            Application.Run(new Questions());
-
-            /*if (!File.Exists((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) + "\\config.json"))
+            if(File.Exists(AppDomain.CurrentDomain.BaseDirectory+"\\config.json"))
             {
-
-                Application.Run(new Form1());
+                Application.Run(new SessionStartForm());
             }
             else
             {
-                Application.Run(new Form2());
-            }*/
+                Application.Run(new ConfigForm());
+            }
         }
     }
 }

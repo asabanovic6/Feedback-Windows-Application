@@ -17,9 +17,9 @@ namespace Feedback_Application.Models
         public string QuestionType { get; set; }
         public string QuestionText { get; set; }
         public bool IsDependent { get; set; }
-        public string Data1 { get; set; }
-        public string Data2 { get; set; }
-        public string Data3 { get; set; }
+        public string? Data1 { get; set; }
+        public string? Data2 { get; set; }
+        public string? Data3 { get; set; }
         public int CampaignId { get; set; }
 
         public virtual Campaign Campaign { get; set; }

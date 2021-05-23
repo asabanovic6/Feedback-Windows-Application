@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feedback-Application", "Feedback-Application\Feedback-Application.csproj", "{4C488A2A-0968-4C5A-98C6-7C507391C120}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{8A1CA4C2-984F-453A-9293-4545C9FFD272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feedback-Application", "Feedback-Application\Feedback-Application.csproj", "{4C488A2A-0968-4C5A-98C6-7C507391C120}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{4C488A2A-0968-4C5A-98C6-7C507391C120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C488A2A-0968-4C5A-98C6-7C507391C120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C488A2A-0968-4C5A-98C6-7C507391C120}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A1CA4C2-984F-453A-9293-4545C9FFD272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A1CA4C2-984F-453A-9293-4545C9FFD272}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A1CA4C2-984F-453A-9293-4545C9FFD272}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A1CA4C2-984F-453A-9293-4545C9FFD272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
