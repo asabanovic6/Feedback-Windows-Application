@@ -124,12 +124,17 @@ namespace Feedback_Application
             {
                 try
                 {
-                    cfm = new ConfigModel() {CampaignId=null, DeviceId = null, Name = null, IPAddress = textBoxIPadresa.Text, ExpectDependentQuestions = radioButtonDA.Checked, PingForDependentQuestionsFrequency = 30, SessionDuration = 180 };
+                    int? pingForDependent = null;
+                    if (textBoxKeepAlive.Text!="")
+                    {
+                        pingForDependent = int.Parse(textBoxKeepAlive.Text);
+                    }
+                    cfm = new ConfigModel() {CampaignId=null, DeviceId = null, Name = null, IPAddress = textBoxIPadresa.Text, ExpectDependentQuestions = radioButtonDA.Checked, PingForDependentQuestionsFrequency = pingForDependent, SessionDuration = 180 };
                     HelperMethods.CreateConfigFile(cfm);
                     ApiService = new APIService(cfm);
                     ActivateDeviceModel adm = await ApiService.ActivateDevice(textBoxInstallationCode.Text);
                     //fali textbox na formi gdje se upisuje svako koliko treba uređaj da pinga! defaultno je stavljeno na 30 sekundi
-                    cfm = new ConfigModel() { CampaignId=adm.CampaignID, DeviceId = adm.DeviceId, Name = adm.Name, IPAddress = textBoxIPadresa.Text, ExpectDependentQuestions = radioButtonDA.Checked, PingForDependentQuestionsFrequency = 30, SessionDuration = 180 };
+                    cfm = new ConfigModel() { CampaignId=adm.CampaignID, DeviceId = adm.DeviceId, Name = adm.Name, IPAddress = textBoxIPadresa.Text, ExpectDependentQuestions = radioButtonDA.Checked, PingForDependentQuestionsFrequency = pingForDependent, SessionDuration = 180 };
                     HelperMethods.CreateConfigFile(cfm);
                     Campaign cmpgn = await ApiService.GetCampaingForDevice(adm.CampaignID);
                     DbService = new FADBService();

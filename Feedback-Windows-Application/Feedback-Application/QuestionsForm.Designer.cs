@@ -317,17 +317,10 @@ namespace Feedback_Application
             trackBar.Name = "trackBar";
             trackBar.Size = new System.Drawing.Size(300, 23);
             trackBar.TabIndex = 2;
-            if (qa.Count == 1)
-            {
-                trackBar.Minimum = 0;
-                trackBar.Maximum = 1;
-            }
-            else
-            {
-                trackBar.Minimum = int.Parse(qa[0].Answer.AnswerText);
-                trackBar.Maximum = int.Parse(qa[qa.Count - 1].Answer.AnswerText);
+            trackBar.Minimum = 1;
+            trackBar.Maximum = int.Parse(qa[0].Answer.AnswerText);
 
-            }
+
 
             //creating labels
             MetroFramework.Controls.MetroLabel middleLabel = new MetroFramework.Controls.MetroLabel();
@@ -348,14 +341,14 @@ namespace Feedback_Application
             startLabel.Name = "metroLabel3";
             startLabel.Size = new System.Drawing.Size(35, 19);
             startLabel.TabIndex = 8;
-            startLabel.Text = qa[0].Answer.AnswerText;
+            startLabel.Text = "1";
 
             endLabel.AutoSize = true;
             endLabel.Location = new System.Drawing.Point(314, 90);
             endLabel.Name = "metroLabel2";
             endLabel.Size = new System.Drawing.Size(35, 19);
             endLabel.TabIndex = 7;
-            endLabel.Text = qa[qa.Count - 1].Answer.AnswerText;
+            endLabel.Text = qa[0].Answer.AnswerText;
 
             panel.SuspendLayout();
             panel.Controls.Add(middleLabel);
