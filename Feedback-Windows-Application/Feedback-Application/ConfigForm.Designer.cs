@@ -141,10 +141,10 @@
             // 
             this.SubmitButton.BackColor = System.Drawing.Color.Azure;
             this.SubmitButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.SubmitButton.Location = new System.Drawing.Point(439, 210);
+            this.SubmitButton.Location = new System.Drawing.Point(410, 202);
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(82, 22);
+            this.SubmitButton.Size = new System.Drawing.Size(111, 30);
             this.SubmitButton.TabIndex = 14;
             this.SubmitButton.Text = "Potvrdi";
             this.SubmitButton.UseVisualStyleBackColor = false;
@@ -182,16 +182,18 @@
             this.panel1.TabIndex = 15;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // Form1
+            // ConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 372);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "ConfigForm";
             this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 15);
             this.Text = "Konfiguracijska forma";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

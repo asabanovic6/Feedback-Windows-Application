@@ -48,7 +48,7 @@ namespace Feedback_Application
             this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.BackgroundImage = global::Feedback_Application.Properties.Resources.iconfinder_UI_Basic_outline_116_4733225__1_;
+            this.buttonBack.BackgroundImage = global::Feedback_Application.Properties.Resources.icons8_next_page_50__1_;
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonBack.FlatAppearance.BorderSize = 0;
@@ -56,6 +56,8 @@ namespace Feedback_Application
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.Location = new System.Drawing.Point(139, 14);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBack.MaximumSize = new System.Drawing.Size(55, 50);
+            this.buttonBack.MinimumSize = new System.Drawing.Size(55, 50);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Padding = new System.Windows.Forms.Padding(10);
             this.buttonBack.Size = new System.Drawing.Size(55, 50);
@@ -67,15 +69,17 @@ namespace Feedback_Application
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.BackgroundImage = global::Feedback_Application.Properties.Resources.iconfinder_UI_Basic_outline_116_;
+            this.buttonOK.BackgroundImage = global::Feedback_Application.Properties.Resources.icons8_next_page_50;
             this.buttonOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonOK.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonOK.Location = new System.Drawing.Point(200, 14);
+            this.buttonOK.Location = new System.Drawing.Point(261, 14);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonOK.MaximumSize = new System.Drawing.Size(55, 50);
+            this.buttonOK.MinimumSize = new System.Drawing.Size(55, 50);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Padding = new System.Windows.Forms.Padding(10);
             this.buttonOK.Size = new System.Drawing.Size(55, 50);
@@ -88,27 +92,37 @@ namespace Feedback_Application
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExit.BackgroundImage = global::Feedback_Application.Properties.Resources.icons8_logout_rounded_left_30;
-            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonExit.BackgroundImage = global::Feedback_Application.Properties.Resources.iconfinder_Log_out_4473020;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonExit.Location = new System.Drawing.Point(261, 14);
+            this.buttonExit.Location = new System.Drawing.Point(350, 14);
+            this.buttonExit.MaximumSize = new System.Drawing.Size(55, 50);
+            this.buttonExit.MinimumSize = new System.Drawing.Size(55, 50);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(54, 50);
+            this.buttonExit.Size = new System.Drawing.Size(55, 50);
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click_1);
             // 
             // SubmitSessionButton
             // 
-            this.SubmitSessionButton.Location = new System.Drawing.Point(697, 654);
+            this.SubmitSessionButton.BackgroundImage = global::Feedback_Application.Properties.Resources.icons8_ok_50__1_;
+            this.SubmitSessionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SubmitSessionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SubmitSessionButton.FlatAppearance.BorderSize = 0;
+            this.SubmitSessionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SubmitSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubmitSessionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SubmitSessionButton.Location = new System.Drawing.Point(200, 14);
+            this.SubmitSessionButton.MaximumSize = new System.Drawing.Size(55, 50);
+            this.SubmitSessionButton.MinimumSize = new System.Drawing.Size(55, 50);
             this.SubmitSessionButton.Name = "SubmitSessionButton";
-            this.SubmitSessionButton.Size = new System.Drawing.Size(75, 23);
+            this.SubmitSessionButton.Size = new System.Drawing.Size(55, 50);
             this.SubmitSessionButton.TabIndex = 3;
-            this.SubmitSessionButton.Text = "Submit";
-            this.SubmitSessionButton.UseVisualStyleBackColor = true;
+            this.SubmitSessionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.SubmitSessionButton.Click += new System.EventHandler(this.SubmitSessionButton_Click);
             // 
             // QuestionsForm
@@ -120,15 +134,15 @@ namespace Feedback_Application
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(805, 700);
             this.Controls.Add(this.SubmitSessionButton);
-            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.buttonExit);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Coral;
-            this.MaximumSize = new System.Drawing.Size(805, 700);
-            this.MinimumSize = new System.Drawing.Size(805, 700);
+            this.MinimizeBox = false;
             this.Name = "QuestionsForm";
-            this.Text = "Questions";
+            this.Text = "Kampanja";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Questions_Load);
             this.ResumeLayout(false);
 
@@ -141,7 +155,8 @@ namespace Feedback_Application
             mainPanel.HorizontalScrollbarBarColor = true;
             mainPanel.HorizontalScrollbarHighlightOnWheel = false;
             mainPanel.HorizontalScrollbarSize = 10;
-            mainPanel.Location = new System.Drawing.Point(23, 86);
+            mainPanel.Location = new System.Drawing.Point((int)(this.Width * 0.43), (int)(this.Height * 0.2));
+
             mainPanel.Name = "mainPanel" + page.ToString();
             mainPanel.Size = new System.Drawing.Size(700, 700);
             mainPanel.TabIndex = 2;
@@ -180,7 +195,9 @@ namespace Feedback_Application
             radioButton.Text = text;
             radioButton.UseSelectable = true;
             mainPanel.SuspendLayout();
+            radioButton.Parent = mainPanel;
             mainPanel.Controls.Add(radioButton);
+            mainPanel.Parent = this;
             this.Controls.Add(mainPanel);
 
             return radioButton;
@@ -303,7 +320,6 @@ namespace Feedback_Application
                     endPosition += 40;
                 }
             }
-
             panels.Add(panel);
             return endPosition;
         }
@@ -323,9 +339,9 @@ namespace Feedback_Application
 
 
             //creating labels
-            MetroFramework.Controls.MetroLabel middleLabel = new MetroFramework.Controls.MetroLabel();
-            MetroFramework.Controls.MetroLabel endLabel = new MetroFramework.Controls.MetroLabel();
-            MetroFramework.Controls.MetroLabel startLabel = new MetroFramework.Controls.MetroLabel();
+            System.Windows.Forms.Label middleLabel = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label endLabel = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label startLabel = new System.Windows.Forms.Label();
 
             /*middleLabel.AutoSize = true;
             middleLabel.Location = new System.Drawing.Point(139, 90);
@@ -337,16 +353,22 @@ namespace Feedback_Application
             */
 
             startLabel.AutoSize = true;
-            startLabel.Location = new System.Drawing.Point(18, 90);
+            startLabel.Location = new System.Drawing.Point(15, 90);
             startLabel.Name = "metroLabel3";
-            startLabel.Size = new System.Drawing.Size(35, 19);
+            startLabel.ForeColor = Color.Black;
+            startLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            startLabel.Size = new System.Drawing.Size(50, 25);
+            //startLabel.Size = new System.Drawing.Size(35, 19);
             startLabel.TabIndex = 8;
             startLabel.Text = "1";
 
             endLabel.AutoSize = true;
-            endLabel.Location = new System.Drawing.Point(314, 90);
+            endLabel.Location = new System.Drawing.Point(312, 90);
             endLabel.Name = "metroLabel2";
-            endLabel.Size = new System.Drawing.Size(35, 19);
+            //endLabel.Size = new System.Drawing.Size(35, 19);
+            endLabel.ForeColor = Color.Black;
+            endLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            endLabel.Size = new System.Drawing.Size(58, 25);
             endLabel.TabIndex = 7;
             endLabel.Text = qa[0].Answer.AnswerText;
 
@@ -439,8 +461,6 @@ namespace Feedback_Application
             }
             
         }
-
-        
 
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonOK;

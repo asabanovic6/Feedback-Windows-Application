@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Linq;
 using Feedback_Application.DatabaseService;
+using System.Windows.Forms;
 
 namespace Feedback_Application
 {
@@ -59,9 +60,11 @@ namespace Feedback_Application
             buttonOK.Region = Region.FromHrgn(CreateRoundRectRgn(0,0,buttonOK.Width, buttonOK.Height,10,10));
             buttonBack.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonBack.Width, buttonBack.Height, 10, 10));
             buttonExit.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonExit.Width, buttonExit.Height, 10, 10));
+            SubmitSessionButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SubmitSessionButton.Width, SubmitSessionButton.Height, 10, 10));
             if (page == 0)
             {
                 this.buttonBack.Visible = false;
+                this.SubmitSessionButton.Visible = false;
             }
         }
 
@@ -119,9 +122,11 @@ namespace Feedback_Application
         {
             try
             {
+                //MessageBox.Show("here i amm start");
                 DbService.ExtractUserRespones(campaign, panels);
                 ApiService.SendUserResponseToServer(campaign.Sessions.FirstOrDefault());
                 SessionStartForm newSessionForm = new SessionStartForm();
+                //MessageBox.Show("here i amm");
                 this.Hide();
                 newSessionForm.ShowDialog();
                 this.Close();
