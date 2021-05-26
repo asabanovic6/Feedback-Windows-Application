@@ -136,12 +136,9 @@ namespace Feedback_Application
                     cfm = new ConfigModel() { CampaignId=adm.CampaignID, DeviceId = adm.DeviceId, Name = adm.Name, IPAddress = textBoxIPadresa.Text, ExpectDependentQuestions = radioButtonDA.Checked, PingForDependentQuestionsFrequency = pingForDependent, SessionDuration = 180 };
                     HelperMethods.CreateConfigFile(cfm);
                     Campaign cmpgn = await ApiService.GetCampaingForDevice(adm.CampaignID);
-                    //MessageBox.Show("hello111");
                     DbService = new FADBService();
                     DbService.SaveInitialCampaign(cmpgn);
-                    MessageBox.Show("hello111");
                     SessionStartForm frm = new SessionStartForm();
-                    MessageBox.Show("hello");
                     frm.Show();
                     this.Hide();
                 }
