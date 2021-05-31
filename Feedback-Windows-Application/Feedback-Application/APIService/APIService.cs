@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using Feedback_Application.DatabaseService;
+
 namespace Feedback_Application
 {
     public class APIService
@@ -13,11 +15,14 @@ namespace Feedback_Application
 
         public HttpClient client { get; set; }
         public ConfigModel configModel { get; set; }
+        public FADBService DbService { get; set; }
 
         public APIService(ConfigModel cfm)
         {
             client = new HttpClient();
             configModel = cfm;
+            DbService = new FADBService();
+
         }
 
         public async Task<Campaign> GetCampaingForDevice(int campaignId)
@@ -69,6 +74,7 @@ namespace Feedback_Application
 
         public void SendUserResponseToServer(Session currentSession)
         {
+            
             string sendUserResponse = "response/save";
             var customUserBody = new
             {
@@ -84,7 +90,13 @@ namespace Feedback_Application
 
             if(!response.IsSuccessStatusCode)
             {
-                throw new Exception("Nije se sesija sinhronizovala sa serverom");
+                //ovdje se treba sada implementirati spašavanje sesije u lokalnu bazu
+                DbService.SaveCurrentSession(currentSession);
+            }
+            else
+            {
+                DbService.SaveCurrentSession(currentSession);
+                //ovdje ćemo reć, daj mi sve sesije iz baze koje su dostupne a nisu syncane i syncaj ih
             }
         }
 

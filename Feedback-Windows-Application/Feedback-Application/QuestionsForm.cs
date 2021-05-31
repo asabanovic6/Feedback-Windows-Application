@@ -120,21 +120,12 @@ namespace Feedback_Application
 
         private void SubmitSessionButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //MessageBox.Show("here i amm start");
-                DbService.ExtractUserRespones(campaign, panels);
-                ApiService.SendUserResponseToServer(campaign.Sessions.FirstOrDefault());
-                SessionStartForm newSessionForm = new SessionStartForm();
-                //MessageBox.Show("here i amm");
-                this.Hide();
-                newSessionForm.ShowDialog();
-                this.Close();
-            }
-            catch(Exception ex)
-            {
-                //treba se spasiti sesija u lokalnu bazu i opet redirectati na pocetak
-            }
+            DbService.ExtractUserRespones(campaign, panels);
+            ApiService.SendUserResponseToServer(campaign.Sessions.FirstOrDefault());
+            SessionStartForm newSessionForm = new SessionStartForm();
+            this.Hide();
+            newSessionForm.ShowDialog();
+            this.Close();
         }
     }
 }

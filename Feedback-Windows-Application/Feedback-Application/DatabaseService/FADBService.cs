@@ -92,6 +92,14 @@ namespace Feedback_Application.DatabaseService
         }
 
 
+        public void SaveCurrentSession(Session currentSession)
+        {
+            context.Add(currentSession);
+            context.SaveChanges();
+
+        }
+
+
 
     }
 }
