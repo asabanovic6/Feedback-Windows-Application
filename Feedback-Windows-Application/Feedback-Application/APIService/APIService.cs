@@ -49,7 +49,7 @@ namespace Feedback_Application
             try
             { 
                 string activateDeviceEndpoint = "device/activate/"+installationCode;
-                var response = await client.GetAsync(configModel.IPAddress + activateDeviceEndpoint);
+                var response = await client.PostAsync(configModel.IPAddress + activateDeviceEndpoint, null);
                 if (response.IsSuccessStatusCode)
                 {
                     ActivateDeviceModel adm = JsonConvert.DeserializeObject<ActivateDeviceModel>(await response.Content.ReadAsStringAsync());
@@ -65,7 +65,6 @@ namespace Feedback_Application
                 Console.WriteLine(ex.Message);
                 return null;
             }
-
         }
 
         public void SendUserResponseToServer(Session currentSession)

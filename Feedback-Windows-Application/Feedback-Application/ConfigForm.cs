@@ -10,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace Feedback_Application
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SubmitButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SubmitButton.Width, SubmitButton.Height, 30, 30));
             textBoxKeepAlive.Visible = false;
             labelKeepAlive.Visible = false;
         }
@@ -85,10 +87,22 @@ namespace Feedback_Application
         {
 
         }
-         
+
         // Kontroler za submit dugme
         // U ovom kontroleru se šalje installation code prema serveru i spasavaju se podaci
         // iz config file-a i odg sa servera
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+           (
+               int nLeft,
+               int nTop,
+               int nRight,
+               int nBottom,
+               int nWidthEllipse,
+               int nHeightEllipse
+
+           );
         private async void button1_Click(object sender, EventArgs e)
         {
             bool installationCode = true;
