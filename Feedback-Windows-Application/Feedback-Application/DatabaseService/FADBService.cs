@@ -94,8 +94,9 @@ namespace Feedback_Application.DatabaseService
 
         public void SaveCurrentSession(Session currentSession)
         {
-            context.Add(currentSession);
-            context.SaveChanges();
+            // NE RADI!
+            //context.Add(currentSession);            
+            //context.SaveChanges();
 
         }
 
