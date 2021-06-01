@@ -1,3 +1,5 @@
+using Feedback_Application.DatabaseService;
+using Feedback_Application.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +19,12 @@ namespace Feedback_Application
             Application.SetCompatibleTextRenderingDefault(false);
             if(File.Exists(AppDomain.CurrentDomain.BaseDirectory+"\\config.json"))
             {
-                Application.Run(new SessionStartForm());
+                var DbService = new FADBService();
+                var campaign = DbService.GetCampaign();
+                var configModel = HelperMethods.GetConfigFile();
+                campaign.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)campaign.CampaignId, Duration = (int)configModel.SessionDuration });
+                QuestionsForm sesija = new QuestionsForm(campaign);
+                Application.Run(sesija);
             }
             else
             {

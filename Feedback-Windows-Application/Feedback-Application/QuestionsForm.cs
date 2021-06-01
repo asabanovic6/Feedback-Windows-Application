@@ -131,9 +131,12 @@ namespace Feedback_Application
         {
             DbService.ExtractUserRespones(campaign, panels);
             ApiService.SendUserResponseToServer(campaign.Sessions.FirstOrDefault());
-            SessionStartForm newSessionForm = new SessionStartForm();
+            campaign = DbService.GetCampaign();
+            var configModel = HelperMethods.GetConfigFile();
+            campaign.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)campaign.CampaignId, Duration = (int)configModel.SessionDuration });
+            QuestionsForm sesija = new QuestionsForm(campaign);
             this.Hide();
-            newSessionForm.ShowDialog();
+            sesija.ShowDialog();
             this.Close();
         }
     }

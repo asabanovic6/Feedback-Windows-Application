@@ -201,9 +201,11 @@ namespace Feedback_Application
             return metroCheckBox;
         }
 
-        private MetroFramework.Controls.MetroButton createRadioButton(int startPosition, int endPosition, int i, string text, System.Windows.Forms.Panel mainPanel, bool isPicture, string base64String)
+        private CustomButton createRadioButton(int startPosition, int endPosition, int i, string text, System.Windows.Forms.Panel mainPanel, bool isPicture, string base64String)
         {
-            MetroFramework.Controls.MetroButton radioButton = new MetroFramework.Controls.MetroButton();
+            CustomButton radioButton = new CustomButton();
+            radioButton.Clicked = false;
+            radioButton.Click += RadioButton_Click;
             radioButton.AutoSize = true;
             radioButton.Location = new System.Drawing.Point(startPosition, endPosition);
             radioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -244,6 +246,12 @@ namespace Feedback_Application
             return radioButton;
         }
 
+        private void RadioButton_Click(object sender, EventArgs e)
+        {
+            var temp = (CustomButton)sender;
+            if (temp.Clicked == false) temp.Clicked = true;
+            else temp.Clicked = false;
+        }
 
         private int createTextBoxForCustomAnswer(System.Windows.Forms.Panel panel)
         {

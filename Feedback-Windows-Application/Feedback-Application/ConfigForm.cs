@@ -152,9 +152,11 @@ namespace Feedback_Application
                     Campaign cmpgn = await ApiService.GetCampaingForDevice(adm.CampaignID);
                     DbService = new FADBService();
                     DbService.SaveInitialCampaign(cmpgn);
-                    SessionStartForm frm = new SessionStartForm();
-                    frm.Show();
+                    cmpgn.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)cmpgn.CampaignId, Duration = (int)cfm.SessionDuration });
+                    QuestionsForm sesija = new QuestionsForm(cmpgn);
                     this.Hide();
+                    sesija.ShowDialog();
+                    this.Close();
                 }
                 catch(Exception ex)
                 {

@@ -75,7 +75,7 @@ namespace Feedback_Application
         public void SendUserResponseToServer(Session currentSession)
         {
             
-            string sendUserResponse = "response/save";
+            string sendUserResponse = "device/response/save";
             var customUserBody = new
             {
                 CampaignId = currentSession.CampaignId,

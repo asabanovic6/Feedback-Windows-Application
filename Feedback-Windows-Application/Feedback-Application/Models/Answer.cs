@@ -13,7 +13,7 @@ namespace Feedback_Application.Models
             UserResponses = new HashSet<UserResponse>();
         }
 
-        public int AnswerId { get; set; }
+        public int? AnswerId { get; set; }
         public string AnswerText { get; set; }
         public bool IsApicture { get; set; }
         public string Base64 { get; set; }

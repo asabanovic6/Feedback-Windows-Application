@@ -8,7 +8,7 @@ namespace Feedback_Application.Models
     public partial class UserResponse
     {
         public int Id { get; set; }
-        public int AnswerId { get; set; }
+        public int? AnswerId { get; set; }
         public int QuestionId { get; set; }
         public string CustomAnswer { get; set; }
         public int SessionId { get; set; }

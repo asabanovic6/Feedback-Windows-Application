@@ -54,7 +54,7 @@ namespace Feedback_Application.DatabaseService
                 var panel = panels[i];
                 if(questions[i].QuestionType == "Multiple")
                 {
-                    var controls = panel.Controls.OfType<MetroFramework.Controls.MetroCheckBox>().Where(x=> x.Checked==true).ToList();
+                    var controls = panel.Controls.OfType<System.Windows.Forms.CheckBox>().Where(x=> x.Checked==true).ToList();
                     foreach(var item in controls)
                     {
                         QuestionAnswer tempAnswer = questions[i].QuestionAnswers.Where(x => x.Answer.AnswerText == item.Text).FirstOrDefault();
@@ -63,7 +63,7 @@ namespace Feedback_Application.DatabaseService
                 }
                 else if (questions[i].QuestionType == "Single")
                 {
-                    var controls = panel.Controls.OfType<MetroFramework.Controls.MetroRadioButton>().Where(x => x.Checked == true).ToList();
+                    var controls = panel.Controls.OfType<CustomButton>().Where(x => x.Clicked == true).ToList();
                     foreach (var item in controls)
                     {
                         QuestionAnswer tempAnswer = questions[i].QuestionAnswers.Where(x => x.Answer.AnswerText == item.Text).FirstOrDefault();
@@ -76,7 +76,7 @@ namespace Feedback_Application.DatabaseService
                     //kako izhendlat ako je custom textfield prazan, OVDJE SE PRETPOSTAVLJA DA SE VAZDA NEŠTO ODGOVORI
                     foreach (var item in controls)
                     {
-                        currentSession.UserResponses.Add(new UserResponse() { SessionId = currentSession.SessionId, AnswerId = -1, QuestionId = questions[i].QuestionId, CustomAnswer = item.Text });
+                        currentSession.UserResponses.Add(new UserResponse() { SessionId = currentSession.SessionId, QuestionId = questions[i].QuestionId, CustomAnswer = item.Text });
                     }
                 }
                 else
@@ -85,7 +85,7 @@ namespace Feedback_Application.DatabaseService
                     //kako izhendlat ako je custom textfield prazan, OVDJE SE PRETPOSTAVLJA DA SE VAZDA NEŠTO ODGOVORI
                     foreach (var item in controls)
                     {
-                        currentSession.UserResponses.Add(new UserResponse() { SessionId = currentSession.SessionId, AnswerId = -1, QuestionId = questions[i].QuestionId, CustomAnswer = item.Value.ToString() });
+                        currentSession.UserResponses.Add(new UserResponse() { SessionId = currentSession.SessionId, QuestionId = questions[i].QuestionId, CustomAnswer = item.Value.ToString() });
                     }
                 }
             }
@@ -94,10 +94,8 @@ namespace Feedback_Application.DatabaseService
 
         public void SaveCurrentSession(Session currentSession)
         {
-            // NE RADI!
-            //context.Add(currentSession);            
-            //context.SaveChanges();
-
+            context.Add(currentSession);    
+            context.SaveChanges();
         }
 
 
