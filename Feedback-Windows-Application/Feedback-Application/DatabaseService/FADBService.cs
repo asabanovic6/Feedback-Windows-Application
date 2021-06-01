@@ -45,7 +45,7 @@ namespace Feedback_Application.DatabaseService
             return cmpgn;
         }
 
-        public void ExtractUserRespones(Campaign campaign, List<MetroFramework.Controls.MetroPanel> panels)
+        public void ExtractUserRespones(Campaign campaign, List<System.Windows.Forms.Panel> panels)
         {
             List<Question> questions = campaign.Questions.ToList();
             Session currentSession = campaign.Sessions.FirstOrDefault();

@@ -76,15 +76,19 @@ namespace Feedback_Application
             if (page > 0)
             {
                 this.buttonBack.Visible = true;
-                panels[page].Visible = false;
-                panels[page].SendToBack();
-
                 page--;
                 if(page == 0)
                     this.buttonBack.Visible = false;
                 loadQuestions(campaign.Questions.ToList());
+
                 panels[page].Visible = true;
                 panels[page].BringToFront();
+
+                page++;
+                panels[page].Visible = false;
+                panels[page].SendToBack();
+
+                page--;
                 this.Update();
             } 
         }
@@ -97,9 +101,8 @@ namespace Feedback_Application
             {
                 this.SubmitSessionButton.Visible = false;
                 this.buttonOK.Visible = true;
-                panels[page].Visible = false;
-                panels[page].SendToBack();
-                var elementCount = panels[page].Controls;
+
+                
                 page++;
                 if (page == campaign.Questions.ToList().Count - 1)
                 {
@@ -109,6 +112,12 @@ namespace Feedback_Application
                 loadQuestions(campaign.Questions.ToList());
                 panels[page].Visible = true;
                 panels[page].BringToFront();
+
+                page--;
+                panels[page].Visible = false;
+                panels[page].SendToBack();
+                var elementCount = panels[page].Controls;
+                page++;
                 this.Update();
             }
         }

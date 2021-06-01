@@ -5,6 +5,9 @@
     <Compile Update="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MyTransparentTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="SessionStartForm.cs">
       <SubType>Form</SubType>
     </Compile>
