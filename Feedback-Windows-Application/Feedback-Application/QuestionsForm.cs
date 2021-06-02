@@ -67,7 +67,7 @@ namespace Feedback_Application
             myTimer.Tick += new EventHandler(TimerEventProcessor);
 
             // Sets the timer interval to 10 seconds.
-            myTimer.Interval = 5000;
+            myTimer.Interval = 10000;
             myTimer.Start();
         }
 
@@ -159,6 +159,11 @@ namespace Feedback_Application
 
         private void buttonExit_Click_1(object sender, EventArgs e)
         {
+            var configModel = HelperMethods.GetConfigFile();
+            campaign.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)campaign.CampaignId, Duration = (int)configModel.SessionDuration });
+            QuestionsForm sesija = new QuestionsForm(campaign);
+            this.Hide();
+            sesija.ShowDialog();
             this.Close();
         }
 
