@@ -79,6 +79,7 @@ namespace Feedback_Application
             }
             else
             {
+                //myTimer.Stop();
                 SubmitSessionButton_Click(null, null);
             }
         }
@@ -175,9 +176,14 @@ namespace Feedback_Application
             var configModel = HelperMethods.GetConfigFile();
             campaign.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)campaign.CampaignId, Duration = (int)configModel.SessionDuration });
             QuestionsForm sesija = new QuestionsForm(campaign);
+
+            MessageBox.Show("Hvala na izdvojenom vremenu!");
+
             this.Hide();
             sesija.ShowDialog();
             this.Close();
+
+
         }
     }
 }
