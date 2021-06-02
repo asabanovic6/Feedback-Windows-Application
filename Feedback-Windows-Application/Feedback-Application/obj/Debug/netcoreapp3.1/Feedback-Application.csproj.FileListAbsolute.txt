@@ -732,7 +732,6 @@ C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.csprojAssemblyReference.cache
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback_Application.ConfigForm.resources
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback_Application.Properties.Resources.resources
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback_Application.QuestionsForm.resources

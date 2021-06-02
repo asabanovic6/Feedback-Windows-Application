@@ -189,6 +189,7 @@ namespace Feedback_Application
             System.Windows.Forms.CheckBox metroCheckBox = new System.Windows.Forms.CheckBox();
 
             metroCheckBox.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            metroCheckBox.ForeColor = Color.White;
             metroCheckBox.AutoSize = true;
             metroCheckBox.Location = new System.Drawing.Point(startPosition, endPosition);
             metroCheckBox.Name = "metroCheckBox " + i.ToString();
@@ -199,7 +200,7 @@ namespace Feedback_Application
             metroCheckBox.BackColor = panelColor;
 
             int x = (mainPanel.Size.Width - metroCheckBox.Size.Width) / 2;
-            metroCheckBox.Location = new Point(x, metroCheckBox.Location.Y);
+            metroCheckBox.Location = new Point(x - 100, metroCheckBox.Location.Y + 40);
 
             mainPanel.SuspendLayout();
             mainPanel.Controls.Add(metroCheckBox);
@@ -323,6 +324,7 @@ namespace Feedback_Application
             pictureBoxAnswer.Name = "pictureBox";
             pictureBoxAnswer.Size = new System.Drawing.Size(300, 200);
             pictureBoxAnswer.TabIndex = 2;
+            pictureBoxAnswer.BackColor = Color.White;
             byte[] imageBytes = Convert.FromBase64String(base64String);
             // Convert byte[] to Image
             using (var ms = new MemoryStream(imageBytes))
@@ -331,7 +333,7 @@ namespace Feedback_Application
             }
             pictureBoxAnswer.SizeMode = PictureBoxSizeMode.StretchImage;
             int x = (panel.Size.Width - pictureBoxAnswer.Size.Width) / 2;
-            pictureBoxAnswer.Location = new Point(x + 300, pictureBoxAnswer.Location.Y);
+            pictureBoxAnswer.Location = new Point(x + 120, pictureBoxAnswer.Location.Y - 20);
 
             panel.Controls.Add(pictureBoxAnswer);
             //panel.SuspendLayout();
@@ -409,9 +411,9 @@ namespace Feedback_Application
             trackBar.Maximum = int.Parse(qa[0].Answer.AnswerText);
             int x = (panel.Size.Width - trackBar.Size.Width) / 2;
             trackBar.Location = new Point(x, trackBar.Location.Y + 200);
+            trackBar.ValueChanged += new System.EventHandler(this.buttonOK_Click);
 
-
-
+            
             //creating labels
             System.Windows.Forms.Label middleLabel = new System.Windows.Forms.Label();
             System.Windows.Forms.Label endLabel = new System.Windows.Forms.Label();

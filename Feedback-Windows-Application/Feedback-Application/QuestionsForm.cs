@@ -31,9 +31,9 @@ namespace Feedback_Application
             );
         private void addAnswersToQuestions(List<Question> questions)
         {
-            for(int i = 0; i < questions.Count; i++)
+            for (int i = 0; i < questions.Count; i++)
             {
-                if(questions[i].QuestionType != "custom choice")
+                if (questions[i].QuestionType != "custom choice")
                 {
                     List<QuestionAnswer> answers = new List<QuestionAnswer>();
                     answers.AddRange(new List<QuestionAnswer>
@@ -53,15 +53,21 @@ namespace Feedback_Application
             DbService = new FADBService();
             ApiService = new APIService(HelperMethods.GetConfigFile());
             InitializeComponent();
-            PredjiNaSljedecePitanje();
+            if(page == 0)
+            {
+                buttonOK.Visible = true;
+            }
+            //PredjiNaSljedecePitanje();
         }
+
 
         public void PredjiNaSljedecePitanje()
         {
+
             myTimer.Tick += new EventHandler(TimerEventProcessor);
 
             // Sets the timer interval to 10 seconds.
-            myTimer.Interval = 10000;
+            myTimer.Interval = 5000;
             myTimer.Start();
         }
 
@@ -70,7 +76,8 @@ namespace Feedback_Application
             if (page < campaign.Questions.ToList().Count - 1)
             {
                 buttonOK_Click(null, null);
-            } else
+            }
+            else
             {
                 SubmitSessionButton_Click(null, null);
             }
@@ -80,7 +87,7 @@ namespace Feedback_Application
         {
             //ConfigForm.WriteToFile(questions.Count.ToString());
             loadQuestions(campaign.Questions.ToList());
-            buttonOK.Region = Region.FromHrgn(CreateRoundRectRgn(0,0,buttonOK.Width, buttonOK.Height,10,10));
+            buttonOK.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonOK.Width, buttonOK.Height, 10, 10));
             buttonBack.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonBack.Width, buttonBack.Height, 10, 10));
             buttonExit.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonExit.Width, buttonExit.Height, 10, 10));
             SubmitSessionButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SubmitSessionButton.Width, SubmitSessionButton.Height, 10, 10));
@@ -100,7 +107,7 @@ namespace Feedback_Application
             {
                 this.buttonBack.Visible = true;
                 page--;
-                if(page == 0)
+                if (page == 0)
                     this.buttonBack.Visible = false;
                 loadQuestions(campaign.Questions.ToList());
 
@@ -113,19 +120,19 @@ namespace Feedback_Application
 
                 page--;
                 this.Update();
-            } 
+            }
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
             this.buttonBack.Visible = true;
-            
+
             if (page < campaign.Questions.ToList().Count - 1)
             {
                 this.SubmitSessionButton.Visible = false;
                 this.buttonOK.Visible = false;
 
-                
+
                 page++;
                 if (page == campaign.Questions.ToList().Count - 1)
                 {
@@ -140,8 +147,13 @@ namespace Feedback_Application
                 panels[page].Visible = false;
                 panels[page].SendToBack();
                 var elementCount = panels[page].Controls;
+                if (page == 0)
+                {
+                    PredjiNaSljedecePitanje();
+                }
                 page++;
                 this.Update();
+                
             }
         }
 
