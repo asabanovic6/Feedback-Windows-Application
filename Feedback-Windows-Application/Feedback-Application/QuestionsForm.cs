@@ -16,7 +16,7 @@ namespace Feedback_Application
         private Campaign campaign;
         private FADBService DbService;
         private APIService ApiService;
-        static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer myTimer;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -52,6 +52,7 @@ namespace Feedback_Application
             campaign = cmpgn;
             DbService = new FADBService();
             ApiService = new APIService(HelperMethods.GetConfigFile());
+            myTimer = new System.Windows.Forms.Timer();
             InitializeComponent();
             if(page == 0)
             {
@@ -79,7 +80,7 @@ namespace Feedback_Application
             }
             else
             {
-                //myTimer.Stop();
+                myTimer.Stop();
                 SubmitSessionButton_Click(null, null);
             }
         }
@@ -160,6 +161,7 @@ namespace Feedback_Application
 
         private void buttonExit_Click_1(object sender, EventArgs e)
         {
+            myTimer.Stop();
             var configModel = HelperMethods.GetConfigFile();
             campaign.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)campaign.CampaignId, Duration = (int)configModel.SessionDuration });
             QuestionsForm sesija = new QuestionsForm(campaign);
@@ -173,10 +175,11 @@ namespace Feedback_Application
             DbService.ExtractUserRespones(campaign, panels);
             ApiService.SendUserResponseToServer(campaign.Sessions.FirstOrDefault());
             campaign = DbService.GetCampaign();
+            campaign.Sessions = new HashSet<Session>();
             var configModel = HelperMethods.GetConfigFile();
             campaign.Sessions.Add(new Session() { IsSynced = false, CampaignId = (int)campaign.CampaignId, Duration = (int)configModel.SessionDuration });
             QuestionsForm sesija = new QuestionsForm(campaign);
-
+            
             MessageBox.Show("Hvala na izdvojenom vremenu!");
 
             this.Hide();

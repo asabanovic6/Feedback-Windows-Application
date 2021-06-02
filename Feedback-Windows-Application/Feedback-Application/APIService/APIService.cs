@@ -74,29 +74,55 @@ namespace Feedback_Application
 
         public void SendUserResponseToServer(Session currentSession)
         {
-            
-            string sendUserResponse = "device/response/save";
-            var customUserBody = new
+            try
             {
-                CampaignId = currentSession.CampaignId,
-                UserResponses = currentSession.UserResponses.ToArray()
-            };
+                string sendUserResponse = "device/response/save";
+                Random r = new Random();
+                var configFile = HelperMethods.GetConfigFile();
+                var customUserBody = new
+                {
+                    CampaignId = currentSession.CampaignId,
+                    Duration = r.Next(60, 80),
+                    DeviceId = configFile.DeviceId,
+                    UserResponses = currentSession.UserResponses.ToArray()
+                };
 
-            var customJson = JsonConvert.SerializeObject(customUserBody);
+                var customJson = JsonConvert.SerializeObject(customUserBody);
 
-            var content = new StringContent(customJson.ToString(), Encoding.UTF8, "application/json");
+                var content = new StringContent(customJson.ToString(), Encoding.UTF8, "application/json");
 
-            var response = client.PostAsync(configModel.IPAddress + sendUserResponse, content).Result;
+                var response = client.PostAsync(configModel.IPAddress + sendUserResponse, content).Result;
 
-            if(!response.IsSuccessStatusCode)
-            {
-                //ovdje se treba sada implementirati spašavanje sesije u lokalnu bazu
-                DbService.SaveCurrentSession(currentSession);
+                if(!response.IsSuccessStatusCode)
+                {
+                    DbService.SaveCurrentSession(currentSession);
+                }
+                else
+                {
+                    var sessions = DbService.FetchNotSyncedSessions();
+                    foreach(var session in sessions)
+                    {
+                        customUserBody = new
+                        {
+                            CampaignId = currentSession.CampaignId,
+                            Duration = r.Next(60, 80),
+                            DeviceId = configFile.DeviceId,
+                            UserResponses = session.UserResponses.ToArray()
+                        };
+
+                        customJson = JsonConvert.SerializeObject(customUserBody);
+
+                        content = new StringContent(customJson.ToString(), Encoding.UTF8, "application/json");
+
+                        response = client.PostAsync(configModel.IPAddress + sendUserResponse, content).Result;
+
+                    }
+                }
+
             }
-            else
+            catch(Exception)
             {
                 DbService.SaveCurrentSession(currentSession);
-                //ovdje ćemo reć, daj mi sve sesije iz baze koje su dostupne a nisu syncane i syncaj ih
             }
         }
 

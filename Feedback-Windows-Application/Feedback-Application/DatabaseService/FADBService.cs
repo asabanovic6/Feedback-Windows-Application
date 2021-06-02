@@ -99,6 +99,19 @@ namespace Feedback_Application.DatabaseService
         }
 
 
+        public List<Session> FetchNotSyncedSessions()
+        {
+            var sessions = context.Sessions.Where(x => x.IsSynced == false).ToList();
+            foreach(var session in sessions)
+            {
+                context.Entry(session).Collection(q => q.UserResponses).Load();
+                session.IsSynced = true;
+                context.SaveChanges();
+            }
+            return sessions;
+        }
+
+
 
     }
 }

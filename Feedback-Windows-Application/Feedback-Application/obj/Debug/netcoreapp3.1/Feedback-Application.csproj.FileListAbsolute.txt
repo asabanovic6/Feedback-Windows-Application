@@ -453,8 +453,6 @@ C:\Users\cajuta\source\repos\Feedback-Windows-Application\Feedback-Windows-Appli
 C:\Users\cajuta\source\repos\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.dll
 C:\Users\cajuta\source\repos\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.pdb
 C:\Users\cajuta\source\repos\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.genruntimeconfig.cache
-C:\Users\who.so\Desktop\SI - PROJEKAT CADVI\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\FALocalDB.mdf
-C:\Users\who.so\Desktop\SI - PROJEKAT CADVI\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\FALocalDB_log.ldf
 C:\Users\who.so\Desktop\SI - PROJEKAT CADVI\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.exe
 C:\Users\who.so\Desktop\SI - PROJEKAT CADVI\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.deps.json
 C:\Users\who.so\Desktop\SI - PROJEKAT CADVI\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.runtimeconfig.json

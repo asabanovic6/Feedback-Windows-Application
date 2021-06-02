@@ -7707,19 +7707,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cajuta\\.nuget\\packages\\": {}
+    "C:\\Users\\who.so\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cajuta\\Desktop\\SI\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+      "projectUniqueName": "C:\\Users\\who.so\\Desktop\\SI - PROJEKAT CADVI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
       "projectName": "Feedback-Application",
-      "projectPath": "C:\\Users\\cajuta\\Desktop\\SI\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
-      "packagesPath": "C:\\Users\\cajuta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cajuta\\Desktop\\SI\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
+      "projectPath": "C:\\Users\\who.so\\Desktop\\SI - PROJEKAT CADVI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\Feedback-Application.csproj",
+      "packagesPath": "C:\\Users\\who.so\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\who.so\\Desktop\\SI - PROJEKAT CADVI\\Feedback-Windows-Application\\Feedback-Windows-Application\\Feedback-Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cajuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\who.so\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7786,7 +7786,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   },
