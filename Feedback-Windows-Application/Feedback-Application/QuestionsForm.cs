@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Linq;
 using Feedback_Application.DatabaseService;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Feedback_Application
 {
@@ -15,6 +16,7 @@ namespace Feedback_Application
         private Campaign campaign;
         private FADBService DbService;
         private APIService ApiService;
+        static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -51,6 +53,27 @@ namespace Feedback_Application
             DbService = new FADBService();
             ApiService = new APIService(HelperMethods.GetConfigFile());
             InitializeComponent();
+            PredjiNaSljedecePitanje();
+        }
+
+        public void PredjiNaSljedecePitanje()
+        {
+            myTimer.Tick += new EventHandler(TimerEventProcessor);
+
+            // Sets the timer interval to 10 seconds.
+            myTimer.Interval = 10000;
+            myTimer.Start();
+        }
+
+        private void TimerEventProcessor(object sender, EventArgs e)
+        {
+            if (page < campaign.Questions.ToList().Count - 1)
+            {
+                buttonOK_Click(null, null);
+            } else
+            {
+                SubmitSessionButton_Click(null, null);
+            }
         }
 
         private void Questions_Load(object sender, EventArgs e)
@@ -71,7 +94,7 @@ namespace Feedback_Application
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            this.buttonOK.Visible = true;
+            this.buttonOK.Visible = false;
 
             if (page > 0)
             {
@@ -100,7 +123,7 @@ namespace Feedback_Application
             if (page < campaign.Questions.ToList().Count - 1)
             {
                 this.SubmitSessionButton.Visible = false;
-                this.buttonOK.Visible = true;
+                this.buttonOK.Visible = false;
 
                 
                 page++;
