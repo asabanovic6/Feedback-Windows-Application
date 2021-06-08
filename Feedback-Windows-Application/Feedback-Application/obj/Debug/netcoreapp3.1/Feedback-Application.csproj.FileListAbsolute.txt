@@ -671,8 +671,6 @@ C:\Users\Amina\Documents\CopyProjekta\Feedback-Windows-Application\Feedback-Wind
 C:\Users\Amina\Documents\CopyProjekta\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.pdb
 C:\Users\Amina\Documents\CopyProjekta\Feedback-Windows-Application\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.genruntimeconfig.cache
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.exe
-C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\FALocalDB.mdf
-C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\FALocalDB_log.ldf
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.deps.json
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.runtimeconfig.json
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\Feedback-Application.runtimeconfig.dev.json
@@ -742,3 +740,5 @@ C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.dll
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.pdb
 C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.genruntimeconfig.cache
+C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\obj\Debug\netcoreapp3.1\Feedback-Application.csprojAssemblyReference.cache
+C:\Users\cajuta\Desktop\SI\Feedback-Windows-Application\Feedback-Application\bin\Debug\netcoreapp3.1\FALocalDB.mdf

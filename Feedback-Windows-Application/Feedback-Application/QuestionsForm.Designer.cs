@@ -201,6 +201,7 @@ namespace Feedback_Application
 
             int x = (mainPanel.Size.Width - metroCheckBox.Size.Width) / 2;
             metroCheckBox.Location = new Point(x - 100, metroCheckBox.Location.Y + 40);
+            metroCheckBox.CheckedChanged += new System.EventHandler(CheckBox1_CheckedChanged);
 
             mainPanel.SuspendLayout();
             mainPanel.Controls.Add(metroCheckBox);
@@ -209,7 +210,21 @@ namespace Feedback_Application
             return metroCheckBox;
         }
 
-        private CustomButton createRadioButton(int startPosition, int endPosition, int i, string text, System.Windows.Forms.Panel mainPanel, bool isPicture, string base64String)
+
+        private void CheckBox1_CheckedChanged(Object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            string index = cb.Name.Split(" ")[1];
+            PictureBox slika = (PictureBox)this.Controls.Find("pictureBox " + index, true)[0];
+            if (cb.Checked)
+                slika.Tag = Color.Black;
+            else
+                slika.Tag = Color.Transparent;
+            slika.Refresh();
+        }
+        
+
+private CustomButton createRadioButton(int startPosition, int endPosition, int i, string text, System.Windows.Forms.Panel mainPanel, bool isPicture, string base64String)
         {
             CustomButton radioButton = new CustomButton();
             radioButton.Clicked = false;
@@ -315,13 +330,13 @@ namespace Feedback_Application
             panel.Controls.Add(questionLabel);
         }
 
-        private void createPictureBox(int startPosition, int endPosition, System.Windows.Forms.Panel panel, string base64String)
+        private PictureBox createPictureBox(int startPosition, int endPosition, int i, System.Windows.Forms.Panel panel, string base64String)
         {
             System.Windows.Forms.PictureBox pictureBoxAnswer = new System.Windows.Forms.PictureBox();
 
 
             pictureBoxAnswer.Location = new System.Drawing.Point(startPosition, endPosition);
-            pictureBoxAnswer.Name = "pictureBox";
+            pictureBoxAnswer.Name = "pictureBox " + i.ToString();
             pictureBoxAnswer.Size = new System.Drawing.Size(300, 200);
             pictureBoxAnswer.TabIndex = 2;
             pictureBoxAnswer.BackColor = Color.White;
@@ -334,14 +349,41 @@ namespace Feedback_Application
             pictureBoxAnswer.SizeMode = PictureBoxSizeMode.StretchImage;
             int x = (panel.Size.Width - pictureBoxAnswer.Size.Width) / 2;
             pictureBoxAnswer.Location = new Point(x + 120, pictureBoxAnswer.Location.Y - 20);
-
+            pictureBoxAnswer.Paint += new System.Windows.Forms.PaintEventHandler(Slikaj);
             panel.Controls.Add(pictureBoxAnswer);
             //panel.SuspendLayout();
             //panel.Controls.Add(pictureBoxAnswer);
             //this.Controls.Add(panel);
+            return pictureBoxAnswer;
         }
 
-        private int createMultipleChoicePanel(System.Windows.Forms.Panel panel, List<Question> pitanja, int startPosition, int endPosition)
+        private void Slikaj(object sender, System.Windows.Forms.PaintEventArgs e)
+        {	
+            if (((PictureBox) sender).Tag == null)
+                ((PictureBox) sender).Tag = Color.Transparent;
+            var borderColor = (Color)(((PictureBox)sender)).Tag;
+            var borderStyle = ButtonBorderStyle.Solid;
+            var borderWidth = 5;
+            Rectangle borderRectangle = ((PictureBox)sender).ClientRectangle;
+            ControlPaint.DrawBorder(
+                                e.Graphics,
+                                borderRectangle,
+                                borderColor,
+                                borderWidth,
+                                borderStyle,
+                                borderColor,
+                                borderWidth,
+                                borderStyle,
+                                borderColor,
+                                borderWidth,
+                                borderStyle,
+                                borderColor,
+                                borderWidth,
+                                borderStyle);
+        }
+        
+
+private int createMultipleChoicePanel(System.Windows.Forms.Panel panel, List<Question> pitanja, int startPosition, int endPosition)
         {
             List<QuestionAnswer> qa = new List<QuestionAnswer>();
             qa.AddRange(pitanja[page].QuestionAnswers);
@@ -355,7 +397,7 @@ namespace Feedback_Application
                     endPosition += 130;
                     // Ovo ce se odkomentarisati, problem sa slikama voća prilikom pretvaranja
                     System.Windows.Forms.CheckBox cb = createCheckBox(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel);
-                    createPictureBox(startPosition + 20, endPosition, panel, qa[j].Answer.Base64);
+                    var slika = createPictureBox(startPosition + 20, endPosition, j, panel, qa[j].Answer.Base64);
                     endPosition += 80;
                 }
                 else
@@ -403,12 +445,13 @@ namespace Feedback_Application
         {
 
             MyTransparentTrackBar trackBar = new MyTransparentTrackBar();
+            string[] numbers = qa[0].Answer.AnswerText.Split('-');
             trackBar.Location = new System.Drawing.Point(23, 50);
             trackBar.Name = "trackBar";
             trackBar.Size = new System.Drawing.Size(300, 23);
             trackBar.TabIndex = 2;
-            trackBar.Minimum = 1;
-            trackBar.Maximum = int.Parse(qa[0].Answer.AnswerText);
+            trackBar.Minimum = Convert.ToInt32(numbers[0]);
+            trackBar.Maximum = Convert.ToInt32(numbers[1]);
             int x = (panel.Size.Width - trackBar.Size.Width) / 2;
             trackBar.Location = new Point(x, trackBar.Location.Y + 200);
             trackBar.ValueChanged += new System.EventHandler(this.buttonOK_Click);
@@ -436,7 +479,9 @@ namespace Feedback_Application
             startLabel.Size = new System.Drawing.Size(50, 25);
             //startLabel.Size = new System.Drawing.Size(35, 19);
             startLabel.TabIndex = 8;
-            startLabel.Text = "1";
+
+            
+            startLabel.Text = numbers[0];
 
             endLabel.AutoSize = true;
             endLabel.Location = new System.Drawing.Point(x + 290, trackBar.Location.Y + 80);
@@ -446,7 +491,7 @@ namespace Feedback_Application
             endLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             endLabel.Size = new System.Drawing.Size(58, 25);
             endLabel.TabIndex = 7;
-            endLabel.Text = qa[0].Answer.AnswerText;
+            endLabel.Text = numbers[1];
 
             panel.SuspendLayout();
             panel.Controls.Add(middleLabel);
