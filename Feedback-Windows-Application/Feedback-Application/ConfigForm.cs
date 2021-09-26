@@ -211,13 +211,13 @@ namespace Feedback_Application
 
         }
 
-        private void radioButtonDA_CheckedChanged(object sender, EventArgs e)
+        private void ButtonDA_CheckedChanged(object sender, EventArgs e)
         {
             textBoxKeepAlive.Visible = true;
             labelKeepAlive.Visible = true;
         }
 
-        private void radioButtonNE_CheckedChanged(object sender, EventArgs e)
+        private void ButtonNE_CheckedChanged(object sender, EventArgs e)
         {
             textBoxKeepAlive.Visible = false;
             labelKeepAlive.Visible = false;

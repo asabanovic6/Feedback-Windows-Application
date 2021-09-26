@@ -33,9 +33,9 @@
             this.labelKeepAlive = new System.Windows.Forms.Label();
             this.textBoxIPadresa = new System.Windows.Forms.TextBox();
             this.labelIPadresa = new System.Windows.Forms.Label();
-            this.radioButtonDA = new System.Windows.Forms.RadioButton();
+            this.buttonDA = new System.Windows.Forms.RadioButton();
             this.labelPitanja = new System.Windows.Forms.Label();
-            this.radioButtonNE = new System.Windows.Forms.RadioButton();
+            this.buttonNE = new System.Windows.Forms.button();
             this.labelInstallationCode = new System.Windows.Forms.Label();
             this.SubmitButton = new System.Windows.Forms.Button();
             this.textBoxKeepAlive = new System.Windows.Forms.TextBox();
@@ -257,11 +257,11 @@
         private System.Windows.Forms.Label labelKeepAlive;
         private System.Windows.Forms.TextBox textBoxIPadresa;
         private System.Windows.Forms.Label labelIPadresa;
-        private System.Windows.Forms.RadioButton radioButtonDA;
+        private System.Windows.Forms.RadioButton buttonDA;
         private System.Windows.Forms.Label labelPitanja;
-        private System.Windows.Forms.RadioButton radioButtonNE;
+        private System.Windows.Forms.RadioButton buttonNE;
         private System.Windows.Forms.Label labelInstallationCode;
-        private System.Windows.Forms.Button SubmitButton;
+        private System.Windows.Forms.RadionButton SubmitButton;
         private System.Windows.Forms.TextBox textBoxKeepAlive;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
