@@ -72,6 +72,43 @@ namespace Feedback_Application
             myTimer.Start();
         }
 
+	private void dodajOdgovoreZaZavisnaPitanja(List<Question> questions)
+        {
+            for (int i = 0; i < questions.Count; i++)
+            {
+                if (questions[i].QuestionType != "custom choice")
+                {
+                    List<QuestionAnswer> answers = new List<QuestionAnswer>();
+                    answers.AddRange(new List<QuestionAnswer>
+                    {
+                        new QuestionAnswer { Id = 1, AnswerId = 1, QuestionId = i, Answer = new Answer { AnswerId = 1, AnswerText = "1", IsApicture = false} },
+                        new QuestionAnswer { Id = 2, AnswerId = 2, QuestionId = i, Answer = new Answer { AnswerId = 2, AnswerText = "2" ,IsApicture = false} },
+                        new QuestionAnswer { Id = 3, AnswerId = 3, QuestionId = i, Answer = new Answer { AnswerId = 3, AnswerText = "3" ,IsApicture = false} },
+                    });
+                    questions[i].QuestionAnswers = answers;
+
+                }
+            }
+        }
+	
+	public void PauziranjeKampanje()
+        {
+
+            myTimer.Tick += new EventHandler(TimerEventProcessor);
+
+            myTimer.Stop();
+        }
+
+	private void nastaviNakonOdgovoraNaZavisno{
+		for(int i = 0; i < questions.Count; i++){
+			if(questions[i].IsDependent === true){
+				if(questions[i].QuestionAnswers.lenght != 0)
+					continue;
+				else PauziranjeKampanje();
+			}
+		}
+	}
+
         private void TimerEventProcessor(object sender, EventArgs e)
         {
             if (page < campaign.Questions.ToList().Count - 1)
