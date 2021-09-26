@@ -224,21 +224,21 @@ namespace Feedback_Application
         }
         
 
-private CustomButton createRadioButton(int startPosition, int endPosition, int i, string text, System.Windows.Forms.Panel mainPanel, bool isPicture, string base64String)
+private CustomButton createButton(int startPosition, int endPosition, int i, string text, System.Windows.Forms.Panel mainPanel, bool isPicture, string base64String)
         {
-            CustomButton radioButton = new CustomButton();
-            radioButton.Clicked = false;
-            radioButton.Click += RadioButton_Click;
-            radioButton.AutoSize = true;
-            radioButton.Location = new System.Drawing.Point(startPosition, endPosition);
-            radioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            CustomButton button = new CustomButton();
+            button.Clicked = false;
+            button.Click += RadioButton_Click;
+            button.AutoSize = true;
+            button.Location = new System.Drawing.Point(startPosition, endPosition);
+            button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 
-            radioButton.Name = "metroRadioButton " + i.ToString();
-            radioButton.TabIndex = 0;
-            radioButton.Text = text;
-            radioButton.ForeColor = Color.Transparent;
-            radioButton.UseSelectable = true;
-            radioButton.Size = new System.Drawing.Size(250, 100);
+            button.Name = "metroRadioButton " + i.ToString();
+            button.TabIndex = 0;
+            button.Text = text;
+            button.ForeColor = Color.Transparent;
+            button.UseSelectable = true;
+            button.Size = new System.Drawing.Size(250, 100);
 
             if (isPicture)
             {
@@ -247,26 +247,26 @@ private CustomButton createRadioButton(int startPosition, int endPosition, int i
 
                 using (var ms = new MemoryStream(imageBytes))
                 {
-                    radioButton.BackgroundImage = Image.FromStream(ms, true);
-                    radioButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-                    radioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-                    radioButton.FlatAppearance.BorderSize = 0;
-                    radioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-                    radioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                    radioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                    button.BackgroundImage = Image.FromStream(ms, true);
+                    button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+                    button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                    button.FlatAppearance.BorderSize = 0;
+                    button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                   button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                    button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
                 }
             }
 
-            int x = (mainPanel.Size.Width - radioButton.Size.Width) / 2;
-            radioButton.Location = new Point(x, radioButton.Location.Y);
+            int x = (mainPanel.Size.Width - button.Size.Width) / 2;
+            button.Location = new Point(x,button.Location.Y);
             mainPanel.SuspendLayout();
-            radioButton.Parent = mainPanel;
-            mainPanel.Controls.Add(radioButton);
+            button.Parent = mainPanel;
+            mainPanel.Controls.Add(button);
             mainPanel.Parent = this;
 
             this.Controls.Add(mainPanel);
 
-            return radioButton;
+            return button;
         }
 
         private void RadioButton_Click(object sender, EventArgs e)
@@ -422,14 +422,14 @@ private int createMultipleChoicePanel(System.Windows.Forms.Panel panel, List<Que
                 if (qa[j].Answer.IsApicture.Equals(true))
                 {
                     endPosition += 130;
-                    MetroFramework.Controls.MetroButton rb = createRadioButton(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel, qa[j].Answer.IsApicture, qa[j].Answer.Base64);
+                    MetroFramework.Controls.MetroButton rb = createButton(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel, qa[j].Answer.IsApicture, qa[j].Answer.Base64);
                     rb.Click += new System.EventHandler(this.buttonOK_Click);
                     endPosition += 50;
                 }
                 else
                 {
                     endPosition += 50;
-                    MetroFramework.Controls.MetroButton rb = createRadioButton(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel, qa[j].Answer.IsApicture, qa[j].Answer.Base64);
+                    MetroFramework.Controls.MetroButton rb = createButton(startPosition, endPosition, j, qa[j].Answer.AnswerText, panel, qa[j].Answer.IsApicture, qa[j].Answer.Base64);
                     rb.Click += new System.EventHandler(this.buttonOK_Click);
                     endPosition += 130;
 
